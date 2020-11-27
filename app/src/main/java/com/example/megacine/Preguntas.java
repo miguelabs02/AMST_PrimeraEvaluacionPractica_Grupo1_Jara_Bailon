@@ -2,6 +2,7 @@ package com.example.megacine;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseIntArray;
 import android.view.View;
@@ -20,10 +21,13 @@ public class Preguntas extends AppCompatActivity {
     Button opcion_2;
     Button opcion_3;
     Button opcion_4;
-    Random rand;
-    ArrayList<Integer> preguntas_expuestas;
+
+    //ArrayList<Integer> preguntas_expuestas;
     Boolean Ganador;
     Boolean respuesta_correcta;
+    int aciertos;
+    ArrayList<Integer> random;
+    ArrayList<Pregunta> p;
     /*ImageView im1;
     ImageView im2;
     ImageView im3;
@@ -96,24 +100,49 @@ public class Preguntas extends AppCompatActivity {
         opcion_2 = (Button) findViewById(R.id.btn_op_2);
         opcion_3 = (Button) findViewById(R.id.btn_op_3);
         opcion_4 = (Button) findViewById(R.id.btn_op_4);
-        preguntas_expuestas = new ArrayList<>();
+        //preguntas_expuestas = new ArrayList<>();
         Ganador = false;
         respuesta_correcta = true;
+        int aciertos = 0;
         ArrayList<Pregunta> p = crearPreguntas();
-        mostrarPreguntas(p);
-
+        random = crearRandom();
     }
 
-    void mostrarPreguntas(ArrayList<Pregunta> p){
-        rand = new Random();
-        Integer n = rand.nextInt(4)+1;
-        if(!(preguntas_expuestas.contains(n))){
+    void mostrarPreguntas(ArrayList<Pregunta> p,int n){
             imagenMostrar.setImageResource(p.get(n).getImv());
             opcion_1.setText(p.get(n).getResp().get(0));
             opcion_2.setText(p.get(n).getResp().get(1));
             opcion_3.setText(p.get(n).getResp().get(2));
             opcion_4.setText(p.get(n).getResp().get(3));
-            preguntas_expuestas.add(n);
+            //preguntas_expuestas.add(n);
+    }
+
+    ArrayList<Integer> crearRandom(){
+        ArrayList<Integer> lista = new ArrayList<>();
+        while(lista.size()<5){
+            Random rand = new Random();
+            Integer n = rand.nextInt(4)+1;
+            if (!lista.contains(n)){
+                lista.add(n);
+            }
+        }
+        return lista;
+    }
+
+    public void onClick(View view){
+
+        if(opcion_1.getText().equals(p.get(aciertos).getRespCorr()) && opcion_1.isPressed()){
+            aciertos+=1;
+            if(aciertos==5){
+                Intent victoria = new Intent(Preguntas.this, P_Acierto.class);
+                startActivity(victoria);
+            }
+            mostrarPreguntas(p,random.get(aciertos));
+        }else{
+            Intent fallo = new Intent(Preguntas.this, P_Fallo.class);
+            startActivity(fallo);
         }
     }
+
+
 }
