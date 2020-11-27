@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class Pregunta {
 
-    ImageView imv;
+    int imv;
     String preg;
     String respCorr;
     ArrayList<String> resp = new ArrayList<>();
-    public Pregunta(ImageView imv, String preg, String respCorr, ArrayList<String> resp) {
+    public Pregunta(int imv, String preg, String respCorr, ArrayList<String> resp) {
 
         this.imv = imv;
         this.preg = preg;
@@ -19,11 +19,11 @@ public class Pregunta {
         this.resp = resp;
     }
 
-    public ImageView getImv() {
+    public int getImv() {
         return imv;
     }
 
-    public void setImv(ImageView imv) {
+    public void setImv(int imv) {
         this.imv = imv;
     }
 

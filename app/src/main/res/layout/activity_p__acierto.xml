@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:srcCompat="@drawable/c50d7c87c33d8ffa6a6cf84142122498" />
+        app:srcCompat="@drawable/cara_muy_feliz" />
 
     <TextView
         android:id="@+id/textView5"

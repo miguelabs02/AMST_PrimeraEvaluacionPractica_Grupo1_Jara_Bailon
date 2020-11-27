@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Emoji__282_29" />
+        app:srcCompat="@drawable/caratriste" />
 
     <TextView
         android:id="@+id/textView3"

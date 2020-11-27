@@ -8,7 +8,7 @@
     tools:context=".Preguntas">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/pelicula"
         android:layout_width="match_parent"
         android:layout_height="152dp"
         tools:srcCompat="@tools:sample/avatars" />
@@ -21,25 +21,25 @@
         android:text="TextView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_op_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_op_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_op_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btn_op_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
