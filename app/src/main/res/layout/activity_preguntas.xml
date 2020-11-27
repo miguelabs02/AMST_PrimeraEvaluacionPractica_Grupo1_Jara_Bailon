@@ -24,23 +24,27 @@
         android:id="@+id/btn_op_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="Button" />
 
     <Button
         android:id="@+id/btn_op_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="Button" />
 
     <Button
         android:id="@+id/btn_op_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="Button" />
 
     <Button
         android:id="@+id/btn_op_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="Button" />
 </LinearLayout>
