@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 
 public class P_Acierto extends AppCompatActivity {
@@ -15,7 +16,14 @@ public class P_Acierto extends AppCompatActivity {
     }
 
     public void salir(View view){
-        Intent menu = new Intent(P_Acierto.this, MainActivity.class);
-        startActivity(menu);
+        finishAffinity();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            super.finishAffinity();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
